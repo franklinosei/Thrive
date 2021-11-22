@@ -11,6 +11,8 @@ const whiteColor = Color(0xFFFFFFFF);
 const lightOrangeColor = Color(0xFFFFCE9E);
 const textColor = Colors.black;
 
+const defaultPadding = 10.0;
+
 const textInputDecoration = InputDecoration(
   labelStyle: TextStyle(color: textColor),
   contentPadding: EdgeInsets.symmetric(
@@ -20,10 +22,10 @@ const textInputDecoration = InputDecoration(
 
   focusedBorder: OutlineInputBorder(
     borderRadius: BorderRadius.all(
-      Radius.circular(20),
+      Radius.circular(10),
     ),
     borderSide: BorderSide(
-      color: Colors.black,
+      color: Colors.white,
     ),
   ),
   // border: OutlineInputBorder(
@@ -39,7 +41,7 @@ const textInputDecoration = InputDecoration(
       Radius.circular(10),
     ),
     borderSide: BorderSide(
-      color: Colors.grey,
+      color: Colors.white,
     ),
   ),
 

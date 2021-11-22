@@ -6,12 +6,14 @@ class LoadingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: bgColor,
-      ),
-      child: const Center(
-        child: CircularProgressIndicator(),
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          color: bgColor,
+        ),
+        child: const Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }

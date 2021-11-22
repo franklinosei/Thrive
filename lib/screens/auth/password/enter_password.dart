@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive/constants/constants.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({Key? key}) : super(key: key);
+class SelectPassword extends StatefulWidget {
+  const SelectPassword({Key? key}) : super(key: key);
 
   @override
-  _SignInState createState() => _SignInState();
+  _SelectPasswordState createState() => _SelectPasswordState();
 }
 
-class _SignInState extends State<SignIn> {
+class _SelectPasswordState extends State<SelectPassword> {
   final _formKey = GlobalKey<FormState>();
   bool _loading = false;
   String email = '';
@@ -24,7 +24,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sign In'),
+        title: const Text('Sign Up'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -34,7 +34,7 @@ class _SignInState extends State<SignIn> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  "Welcome, let's sign you in",
+                  "All fields are required unless indicated",
                   style: TextStyle(
                     fontSize: 15,
                   ),
@@ -53,10 +53,11 @@ class _SignInState extends State<SignIn> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextFormField(
+                          obscureText: true,
                           cursorColor: primaryColor,
                           decoration: textInputDecoration.copyWith(
                             // label: const Text("Email"),
-                            hintText: "Email or Phone",
+                            hintText: "Password",
                           ),
                           keyboardType: TextInputType.emailAddress,
                           onChanged: (val) {
@@ -86,7 +87,7 @@ class _SignInState extends State<SignIn> {
                           cursorColor: primaryColor,
                           decoration: textInputDecoration.copyWith(
                             // label: const Text("Password"),
-                            hintText: "Password",
+                            hintText: "Confirm Password",
                           ),
                           keyboardType: TextInputType.emailAddress,
                           onChanged: (val) {
@@ -99,23 +100,12 @@ class _SignInState extends State<SignIn> {
 
                       // const SizedBox(height: defaultPadding),
 
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: const Text('Forgot password?'),
-                          style: TextButton.styleFrom(
-                            primary: ashColor,
-                          ),
-                        ),
-                      ),
-
-                      const SizedBox(height: defaultPadding),
+                      const SizedBox(height: defaultPadding + 50),
 
                       ElevatedButton(
                         onPressed: () {},
                         child: const Text(
-                          'Sign In',
+                          'Sign Up',
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -131,76 +121,6 @@ class _SignInState extends State<SignIn> {
                             //This line is giving debug errors, change asap
                             horizontal: MediaQuery.of(context).size.width * 0.4,
                             vertical: 20,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(height: defaultPadding + 10),
-
-                const Center(
-                  child: Text(
-                    "Or",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-
-                const SizedBox(height: defaultPadding + 10),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Image.asset('assets/images/google.png'),
-                      style: ElevatedButton.styleFrom(
-                        primary: bgColor,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                      ),
-                    ),
-                    // const SizedBox(width: defaultPadding),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Image.asset('assets/images/fb.png'),
-                      style: ElevatedButton.styleFrom(
-                        primary: bgColor,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Don't have an account",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      // const SizedBox(width: defaultPadding - 5),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/signup');
-                        },
-                        child: const Text(
-                          'Sign Up',
-                          style: TextStyle(
-                            color: secondaryColor,
-                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),

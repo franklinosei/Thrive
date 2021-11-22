@@ -1,8 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:thrive/constants/constants.dart';
+import 'package:thrive/screens/auth/signIn/sign_in.dart';
 import 'package:thrive/screens/error/error.dart';
 import 'package:thrive/screens/home/home.dart';
 import 'package:thrive/screens/loading/loading.dart';
+import 'package:thrive/screens/mainScreen/main_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +36,26 @@ class _AppState extends State<App> {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          return const Home();
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              backgroundColor: bgColor,
+              primarySwatch: Colors.blue,
+            ),
+            routes: {
+              '/home': (context) => const Home(),
+            },
+            home: StreamBuilder(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const MainScreen();
+                } else {
+                  return const SignIn();
+                }
+              },
+            ),
+          );
         }
 
         // Otherwise, show something whilst waiting for initialization to complete

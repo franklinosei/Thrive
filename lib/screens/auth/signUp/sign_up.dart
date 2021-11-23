@@ -79,8 +79,7 @@ class _SignUpState extends State<SignUp> {
                         child: TextFormField(
                           cursorColor: primaryColor,
                           decoration: textInputDecoration.copyWith(
-                            // label: const Text("Email"),
-                            hintText: "Name",
+                            label: const Text("Name"),
                           ),
                           keyboardType: TextInputType.emailAddress,
                           onChanged: (val) {
@@ -109,8 +108,7 @@ class _SignUpState extends State<SignUp> {
                           // obscureText: true,
                           cursorColor: primaryColor,
                           decoration: textInputDecoration.copyWith(
-                            // label: const Text("Password"),
-                            hintText: "Email",
+                            label: const Text("Email"),
                           ),
                           keyboardType: TextInputType.emailAddress,
                           onChanged: (val) {

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive/constants/constants.dart';
+import 'package:thrive/screens/home/home.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -113,7 +114,9 @@ class _SignInState extends State<SignIn> {
                       const SizedBox(height: defaultPadding),
 
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
                         child: const Text(
                           'Sign In',
                           style: TextStyle(

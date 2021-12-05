@@ -253,9 +253,9 @@ class _SignUpState extends State<SignUp> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             //This line is giving debug errors, change asap
-                            horizontal: MediaQuery.of(context).size.width * 0.4,
+                            horizontal: 150,
                             vertical: 20,
                           ),
                         ),

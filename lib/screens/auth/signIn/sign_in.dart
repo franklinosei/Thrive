@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:thrive/constants/constants.dart';
-import 'package:thrive/screens/home/home.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -130,9 +129,9 @@ class _SignInState extends State<SignIn> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                             //This line is giving debug errors, change asap
-                            horizontal: MediaQuery.of(context).size.width * 0.4,
+                            horizontal: 150,
                             vertical: 20,
                           ),
                         ),

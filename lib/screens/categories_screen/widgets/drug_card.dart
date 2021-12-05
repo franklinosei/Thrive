@@ -41,7 +41,7 @@ class _DrugCardState extends State<DrugCard> {
               children: [
                 Image.asset(widget.drugImage),
                 const SizedBox(
-                  height: 10,
+                  height: 8,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

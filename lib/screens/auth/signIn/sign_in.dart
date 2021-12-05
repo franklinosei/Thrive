@@ -115,7 +115,7 @@ class _SignInState extends State<SignIn> {
 
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/home');
+                          Navigator.pushNamed(context, '/mainscreen');
                         },
                         child: const Text(
                           'Sign In',

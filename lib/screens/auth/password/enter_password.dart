@@ -103,7 +103,9 @@ class _SelectPasswordState extends State<SelectPassword> {
                       const SizedBox(height: defaultPadding + 50),
 
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/mainscreen');
+                        },
                         child: const Text(
                           'Sign Up',
                           style: TextStyle(

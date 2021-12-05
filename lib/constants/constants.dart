@@ -10,6 +10,7 @@ const bgColor1 = Color(0xFF7399A3);
 const whiteColor = Color(0xFFFFFFFF);
 const lightOrangeColor = Color(0xFFFFCE9E);
 const textColor = Colors.black;
+const greyColor = Color(0xFF9F9F9F);
 
 const defaultPadding = 10.0;
 

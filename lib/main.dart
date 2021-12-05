@@ -40,6 +40,7 @@ class _AppState extends State<App> {
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
+            color: bgColor,
             theme: ThemeData(
               appBarTheme: const AppBarTheme(
                 centerTitle: true,
@@ -58,6 +59,7 @@ class _AppState extends State<App> {
               '/signup': (context) => const SignUp(),
               '/signin': (context) => const SignIn(),
               '/enterpassword': (context) => const SelectPassword(),
+              '/mainscreen': (context) => const MainScreen(),
             },
             home: StreamBuilder(
               stream: FirebaseAuth.instance.authStateChanges(),

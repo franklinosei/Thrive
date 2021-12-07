@@ -74,8 +74,6 @@ class _AppState extends State<App> {
           );
         }
 
-        // Otherwise, show something whilst waiting for initialization to complete
-        // return const LoadingPage();
         return MaterialApp(
             debugShowCheckedModeBanner: false,
             color: bgColor,
@@ -92,9 +90,7 @@ class _AppState extends State<App> {
               backgroundColor: bgColor,
               primarySwatch: Colors.blue,
             ),
-           
             home: const LoadingPage());
-          
       },
     );
   }

@@ -1,10 +1,12 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:thrive/constants/constants.dart';
-
+import 'package:thrive/components/quick_actions.dart';
+import 'package:thrive/components/categories.dart';
 import 'package:thrive/mock_data/data.dart';
 import 'package:thrive/models/drug_model.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:thrive/screens/categories_screen/categories_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -19,199 +21,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> symptoms = [
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const CategoryScreen(
-                  categoryName: 'Headache',
-                );
-              },
-            ),
-          );
-        },
-        child: Container(
-          child: const Center(
-            child: Text(
-              'Headache',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 252, 252, 1),
-                  fontFamily: 'Nunito',
-                  fontSize: 16,
-                  letterSpacing:
-                      0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1),
-            ),
-          ),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
-            color: Color.fromRGBO(0, 186, 235, 1),
-          ),
-        ),
+      const Categories(
+        categryName: "Headache",
+        boxColor: Color.fromRGBO(0, 186, 235, 1),
       ),
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const CategoryScreen(
-                  categoryName: 'Cold',
-                );
-              },
-            ),
-          );
-        },
-        child: Container(
-            child: const Center(
-              child: Text(
-                'Cold',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(255, 250, 250, 1),
-                    fontFamily: 'Nunito',
-                    fontSize: 16,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              ),
-            ),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
-              ),
-              color: Color.fromRGBO(127, 255, 132, 1),
-            )),
+      const Categories(
+        categryName: "Cold",
+        boxColor: Color.fromRGBO(127, 255, 132, 1),
       ),
-      GestureDetector(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const CategoryScreen(
-                  categoryName: 'Body Pain',
-                );
-              },
-            ),
-          );
-        },
-        child: Container(
-            child: const Center(
-              child: Text(
-                'Body Pain',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(255, 253, 253, 1),
-                    fontFamily: 'Nunito',
-                    fontSize: 16,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              ),
-            ),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10),
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
-              ),
-              color: Color.fromRGBO(8, 230, 230, 1),
-            )),
+      const Categories(
+        categryName: "Body Pain",
+        boxColor: Color.fromRGBO(8, 230, 230, 1),
       ),
-      Container(
-          child: const Center(
-            child: Text(
-              'Stomach Ache',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 251, 251, 1),
-                  fontFamily: 'Nunito',
-                  fontSize: 16,
-                  letterSpacing:
-                      0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1),
-            ),
-          ),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
-            color: Color.fromRGBO(177, 2, 221, 1),
-          )),
-      Container(
-          child: const Center(
-            child: Text(
-              'Sore Throat',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 251, 251, 1),
-                  fontFamily: 'Nunito',
-                  fontSize: 16,
-                  letterSpacing:
-                      0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1),
-            ),
-          ),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
-            color: Color.fromRGBO(45, 129, 255, 1),
-          )),
-      Container(
-          child: const Center(
-            child: Text(
-              'Condom',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 250, 250, 1),
-                  fontFamily: 'Nunito',
-                  fontSize: 16,
-                  letterSpacing:
-                      0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1),
-            ),
-          ),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
-            ),
-            color: Color.fromRGBO(255, 93, 141, 1),
-          ))
+      const Categories(
+        categryName: "Stomach Ache",
+        boxColor: Color.fromRGBO(177, 2, 221, 1),
+      ),
+      const Categories(
+        categryName: "Sore Throat",
+        boxColor: Color.fromRGBO(45, 129, 255, 1),
+      ),
+      const Categories(
+        categryName: "Condom",
+        boxColor: Color.fromRGBO(255, 93, 141, 1),
+      ),
     ];
     return Scaffold(
       backgroundColor: const Color(0xffF8F8FB),
-      //backgroundColor: Colors.green,
       appBar: AppBar(
-        // toolbarHeight: 70,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -221,7 +58,7 @@ class _HomeState extends State<Home> {
                   color: const Color(0xff9F0203), fontSize: 18.13),
             ),
             Text(
-              'pharamcy ',
+              'pharmacy ',
               style: GoogleFonts.montserratAlternates(fontSize: 18.13),
             ),
           ],
@@ -250,7 +87,7 @@ class _HomeState extends State<Home> {
         children: [
           Container(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Column(
                 children: [
                   const SizedBox(height: 5),
@@ -258,16 +95,15 @@ class _HomeState extends State<Home> {
                     onPressed: () {},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Search Products',
-                          style: TextStyle(
-                              color: Color(0xff898989),
-                              fontFamily: 'Nunito',
+                          style: GoogleFonts.nunito(
+                              color: const Color(0xff898989),
                               fontSize: 16,
                               fontWeight: FontWeight.w400),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.search,
                           color: greyColor,
                         ),
@@ -294,70 +130,18 @@ class _HomeState extends State<Home> {
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Card(
-                        elevation: 2,
-                        child: Container(
-                          padding: const EdgeInsets.all(8),
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(60)),
-                            color: Colors.white,
-                          ),
-                          height: MediaQuery.of(context).size.width * 0.22,
-                          width: MediaQuery.of(context).size.width * 0.27,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
-                              Image(image: AssetImage("assets/images/1.png")),
-                              Text("Claim Drug or Prescription"),
-                            ],
-                          ),
-                        ),
+                    children: const [
+                      QuickActions(
+                        info: "Claim Drug or Prescription",
+                        image: "1.png",
                       ),
-                      Card(
-                        elevation: 2,
-                        child: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(60)),
-                            color: Colors.white,
-                          ),
-                          height: MediaQuery.of(context).size.width * 0.22,
-                          width: MediaQuery.of(context).size.width * 0.27,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
-                              Image(image: AssetImage("assets/images/2.png")),
-                              Text("Product Picture"),
-                            ],
-                          ),
-                        ),
+                      QuickActions(
+                        info: "Product Picture",
+                        image: "2.png",
                       ),
-                      Card(
-                        elevation: 2,
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: const BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(60)),
-                            color: Colors.white,
-                          ),
-                          height: MediaQuery.of(context).size.width * 0.22,
-                          width: MediaQuery.of(context).size.width * 0.27,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
-                              Image(image: AssetImage("assets/images/3.png")),
-                              Text(
-                                "Pharmacist Assistant",
-                                style: TextStyle(
-                                    fontSize: 14, fontFamily: 'Nunito'),
-                              ),
-                            ],
-                          ),
-                        ),
+                      QuickActions(
+                        info: "Pharmacist Assistant",
+                        image: "3.png",
                       ),
                     ],
                   ),
@@ -368,14 +152,16 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          const ListTile(
+          ListTile(
             leading: Text(
               "Categories",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style:
+                  GoogleFonts.nunito(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(18.5),
+            padding: const EdgeInsets.only(
+                left: 18.5, right: 18.5, bottom: 18.5, top: 13),
             child: Flexible(
               child: GridView.builder(
                 scrollDirection: Axis.vertical,
@@ -391,22 +177,24 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: Card(
               elevation: 0,
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               color: Colors.white,
               child: ListTile(
-                leading: Image(image: AssetImage("assets/images/pharma.png")),
-                title: Text("Pharmacist on strike",
-                    style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                leading:
+                    const Image(image: AssetImage("assets/images/pharma.png")),
+                title: Text("Pharmacists on strike",
+                    style: GoogleFonts.nunito(
+                        fontWeight: FontWeight.bold, fontSize: 16)),
                 subtitle: Text(
                   "National Association of Pharmacists...",
-                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 12),
+                  style: GoogleFonts.nunito(
+                      fontWeight: FontWeight.w300, fontSize: 12),
                 ),
               ),
             ),

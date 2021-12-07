@@ -5,7 +5,9 @@ import 'package:thrive/models/drug_model.dart';
 import 'package:thrive/screens/categories_screen/widgets/drug_card.dart';
 
 class CategoryScreen extends StatefulWidget {
-  const CategoryScreen({Key? key}) : super(key: key);
+  final String categoryName;
+  const CategoryScreen({Key? key, required this.categoryName})
+      : super(key: key);
 
   @override
   _CategoryScreenState createState() => _CategoryScreenState();
@@ -18,7 +20,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return Scaffold(
       appBar: AppBar(
         // toolbarHeight: 70,
-        title: const Text('Category'),
+        title: Text(widget.categoryName),
         leading: IconButton(
           icon: const Icon(
             Icons.chevron_left,

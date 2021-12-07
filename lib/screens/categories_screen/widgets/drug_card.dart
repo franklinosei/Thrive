@@ -50,11 +50,15 @@ class _DrugCardState extends State<DrugCard> {
                       widget.drugName,
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                        fontSize: 12,
                       ),
                     ),
                     Text(
-                        'GHC ${drugQuantity < 1 ? widget.drugPrice : widget.drugPrice * drugQuantity}'),
+                      'Ghs${drugQuantity < 1 ? widget.drugPrice : widget.drugPrice * drugQuantity}',
+                      style: const TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(

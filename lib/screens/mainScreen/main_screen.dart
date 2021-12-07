@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:thrive/constants/constants.dart';
-import 'package:thrive/screens/categories_screen/categories_screen.dart';
 import 'package:thrive/screens/help_screen/help_screen.dart';
 import 'package:thrive/screens/history_screen/history_screen.dart';
 import 'package:thrive/screens/home/home.dart';
@@ -24,8 +23,8 @@ class _MainScreenState extends State<MainScreen> {
 
   final List<Widget> _widgetOptions = <Widget>[
     //just used it to build the page ... change it to Home()
-    const CategoryScreen(),
-    // const Home(),
+    // const CategoryScreen(),
+    const Home(),
     const HistoryScreen(),
     const UserSettingsScreen(),
     const HelpScreen(),
@@ -36,7 +35,6 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.shifting,
         elevation: 10,
         selectedIconTheme: const IconThemeData(
           color: lightOrangeColor,

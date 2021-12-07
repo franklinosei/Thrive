@@ -75,7 +75,24 @@ class _AppState extends State<App> {
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return const LoadingPage();
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          color: bgColor,
+          theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              centerTitle: true,
+              backgroundColor: bgColor,
+              elevation: 0,
+              titleTextStyle: TextStyle(
+                  color: primaryColor,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            backgroundColor: bgColor,
+            primarySwatch: Colors.blue,
+          ),
+          home: const LoadingPage(),
+        );
       },
     );
   }

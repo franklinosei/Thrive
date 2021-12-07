@@ -36,6 +36,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _widgetOptions.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
         elevation: 10,
         selectedIconTheme: const IconThemeData(
           color: lightOrangeColor,

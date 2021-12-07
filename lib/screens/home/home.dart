@@ -4,6 +4,7 @@ import 'package:thrive/constants/constants.dart';
 import 'package:thrive/mock_data/data.dart';
 import 'package:thrive/models/drug_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:thrive/screens/categories_screen/categories_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,7 +19,20 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> symptoms = [
-      Container(
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const CategoryScreen(
+                  categoryName: 'Headache',
+                );
+              },
+            ),
+          );
+        },
+        child: Container(
           child: const Center(
             child: Text(
               'Headache',
@@ -41,55 +55,85 @@ class _HomeState extends State<Home> {
               bottomRight: Radius.circular(10),
             ),
             color: Color.fromRGBO(0, 186, 235, 1),
-          )),
-      Container(
-          child: const Center(
-            child: Text(
-              'Cold',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 250, 250, 1),
-                  fontFamily: 'Nunito',
-                  fontSize: 16,
-                  letterSpacing:
-                      0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1),
-            ),
           ),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+        ),
+      ),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const CategoryScreen(
+                  categoryName: 'Cold',
+                );
+              },
             ),
-            color: Color.fromRGBO(127, 255, 132, 1),
-          )),
-      Container(
-          child: const Center(
-            child: Text(
-              'Body Pain',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                  color: Color.fromRGBO(255, 253, 253, 1),
-                  fontFamily: 'Nunito',
-                  fontSize: 16,
-                  letterSpacing:
-                      0 /*percentages not used in flutter. defaulting to zero*/,
-                  fontWeight: FontWeight.normal,
-                  height: 1),
+          );
+        },
+        child: Container(
+            child: const Center(
+              child: Text(
+                'Cold',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    color: Color.fromRGBO(255, 250, 250, 1),
+                    fontFamily: 'Nunito',
+                    fontSize: 16,
+                    letterSpacing:
+                        0 /*percentages not used in flutter. defaulting to zero*/,
+                    fontWeight: FontWeight.normal,
+                    height: 1),
+              ),
             ),
-          ),
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              topRight: Radius.circular(10),
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+              ),
+              color: Color.fromRGBO(127, 255, 132, 1),
+            )),
+      ),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return const CategoryScreen(
+                  categoryName: 'Body Pain',
+                );
+              },
             ),
-            color: Color.fromRGBO(8, 230, 230, 1),
-          )),
+          );
+        },
+        child: Container(
+            child: const Center(
+              child: Text(
+                'Body Pain',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    color: Color.fromRGBO(255, 253, 253, 1),
+                    fontFamily: 'Nunito',
+                    fontSize: 16,
+                    letterSpacing:
+                        0 /*percentages not used in flutter. defaulting to zero*/,
+                    fontWeight: FontWeight.normal,
+                    height: 1),
+              ),
+            ),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+              ),
+              color: Color.fromRGBO(8, 230, 230, 1),
+            )),
+      ),
       Container(
           child: const Center(
             child: Text(
@@ -254,7 +298,7 @@ class _HomeState extends State<Home> {
                       Card(
                         elevation: 2,
                         child: Container(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(60)),
                             color: Colors.white,
@@ -274,7 +318,7 @@ class _HomeState extends State<Home> {
                       Card(
                         elevation: 2,
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(10),
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(60)),
                             color: Colors.white,
@@ -294,7 +338,7 @@ class _HomeState extends State<Home> {
                       Card(
                         elevation: 2,
                         child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding: EdgeInsets.all(10),
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(60)),
                             color: Colors.white,

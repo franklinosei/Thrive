@@ -318,7 +318,7 @@ class _HomeState extends State<Home> {
                       Card(
                         elevation: 2,
                         child: Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(60)),
                             color: Colors.white,
